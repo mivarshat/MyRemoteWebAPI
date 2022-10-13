@@ -1,4 +1,6 @@
-﻿namespace WebApplication1.Models.Domain
+﻿using WebApplication1.Models.Domain;
+
+namespace WebApplication1.Models.DTO
 {
     public class Walk
     {
@@ -15,6 +17,7 @@
         //Navigation Property
         public Region Region { get; set; }
 
-        public WalkDifficulty WalkDifficulty { get; set; }      
+        public WalkDifficulty WalkDifficulty { get; set; }
+
     }
 }
