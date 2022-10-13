@@ -1,6 +1,8 @@
-﻿namespace WebApplication1.Models.Domain
+﻿
+namespace WebApplication1.Models.Domain
 {
-    public class WalkDifficulty
+ 
+    public class WalkDifficulty 
     {
         public Guid Id { get; set; }
 

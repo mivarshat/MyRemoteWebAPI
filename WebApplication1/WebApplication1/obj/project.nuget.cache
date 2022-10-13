@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HKEgA0pWLz5NyEG3W1RfsJ2ZNHZhzG+23Mpz0uRlgofEOYXTn2hfM8f9kSCIo8ifEndRe8JQleaPgTYnfr8Zgg==",
+  "dgSpecHash": "B1wPIf0hAqBmSvR1bkGy+HtZ9eF5czzI8++mG1xcCudRjGOjhYCdyd/ySPDASpvMOTVPCpusWSlO0VG5gr9kzQ==",
   "success": true,
   "projectFilePath": "D:\\Softwares\\Udemy\\Demo\\MyRemoteWebAPI\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Umesh\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Umesh\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Umesh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\Umesh\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Umesh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Umesh\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Umesh\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Umesh\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
