@@ -62,6 +62,10 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAsynch(Models.DTO.RegionRequest regionRequest)
         {
+            //Validate the Request
+            if (!ValidateAddAsynch(regionRequest))
+                return BadRequest(ModelState);
+
             //Request (DTO) to Domain Model
             var region = new Models.Domain.Region()
             {
@@ -117,7 +121,7 @@ namespace WebApplication1.Controllers
             return Ok(regionDTO);
         }
 
-        [HttpPut]
+        [HttpPut] 
         [Route("{id:guid}")]
         public async Task<IActionResult> UpdateAsynch([FromRoute] Guid id,[FromBody] Models.DTO.RegionRequest regionUpdate)
         {
@@ -152,7 +156,51 @@ namespace WebApplication1.Controllers
             //Return Ok Reposnse
             return Ok(regionDTO);
         }
+
+        #region Private Methods
+
+        private bool ValidateAddAsynch(Models.DTO.RegionRequest regionRequest)
+        {
+            if (regionRequest == null)
+            {
+                ModelState.AddModelError(nameof(regionRequest), $"Add Region Data is required");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(regionRequest.Code))
+            {
+                ModelState.AddModelError(nameof(regionRequest.Code), $"{nameof(regionRequest.Code)} can not be null or empty or white space");
+            }
+            if (string.IsNullOrWhiteSpace(regionRequest.Name))
+            {
+                ModelState.AddModelError(nameof(regionRequest.Name), $"{nameof(regionRequest.Name)} can not be null or empty or white space");
+            }
+            if(regionRequest.Area <= 0)
+            {
+                ModelState.AddModelError(nameof(regionRequest.Area), $"{nameof(regionRequest.Area)} can not be less than or equal to zero");
+            }
+            if (regionRequest.Lat <= 0)
+            {
+                ModelState.AddModelError(nameof(regionRequest.Lat), $"{nameof(regionRequest.Lat)} can not be less than or equal to zero");
+            }
+            if (regionRequest.Long <= 0)
+            {
+                ModelState.AddModelError(nameof(regionRequest.Long), $"{nameof(regionRequest.Long)} can not be less than or equal to zero");
+            }
+            if (regionRequest.Population < 0)
+            {
+                ModelState.AddModelError(nameof(regionRequest.Population), $"{nameof(regionRequest.Population)} can not be less than to zero");
+            }
+            
+            if(ModelState.ErrorCount > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        #endregion
     }
 
-    
+
 }
