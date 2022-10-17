@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.Domain;
 using WebApplication1.Repositories;
@@ -7,6 +8,7 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    //[Authorize]
     public class RegionsController : Controller
     {
         private readonly IRegionRepository regionRepository;
@@ -60,11 +62,13 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddAsynch(Models.DTO.RegionRequest regionRequest)
         {
             //Validate the Request
-            if (!ValidateAddAsynch(regionRequest))
-                return BadRequest(ModelState);
+            //if (!ValidateAddAsynch(regionRequest))
+            //    return BadRequest(ModelState);
+            //Using Fluent Validation
 
             //Request (DTO) to Domain Model
             var region = new Models.Domain.Region()
